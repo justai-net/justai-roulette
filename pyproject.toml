@@ -1,0 +1,21 @@
+[project]
+name = "justai-roulette"
+version = "0.2.0"
+description = "RSL Club-style European Roulette Simulator with realistic animations and sounds"
+readme = "README.md"
+requires-python = ">=3.8"
+authors = [{ name = "JustAI" }]
+license = { text = "MIT" }
+
+[project.optional-dependencies]
+audio = ["simpleaudio", "numpy"]
+
+[project.scripts]
+justai-roulette = "justai_roulette.__main__:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.uv]
+package = true

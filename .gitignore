@@ -1,0 +1,11 @@
+# Byte-compiled / cached
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+.venv/
+.uv/
+
+# Build outputs
+dist/
+*.egg-info/
