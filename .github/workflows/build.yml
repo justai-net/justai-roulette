@@ -28,7 +28,7 @@ jobs:
 
       - name: Build EXE
         run: |
-          pyinstaller --onefile --windowed --name "JustAI-Roulette" --icon=NONE src/justai_roulette/__main__.py
+          pyinstaller --onefile --windowed --name "JustAI-Roulette" --icon=NONE --collect-submodules justai_roulette -m justai_roulette
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
