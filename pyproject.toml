@@ -1,6 +1,6 @@
 [project]
 name = "justai-roulette"
-version = "0.2.0"
+version = "0.3.0"
 description = "RSL Club-style European Roulette Simulator with realistic animations and sounds"
 readme = "README.md"
 requires-python = ">=3.8"
