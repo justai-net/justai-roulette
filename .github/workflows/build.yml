@@ -23,24 +23,24 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install pyinstaller
+          pip install nuitka
           pip install -e .
 
       - name: Build EXE
         run: |
           echo "from justai_roulette.__main__ import main; main()" > run_app.py
-          pyinstaller --onefile --windowed --name "JustAI-Roulette" --icon=NONE --collect-submodules justai_roulette run_app.py
+          python -m nuitka --onefile --windows-console-mode=disable --output-filename=JustAI-Roulette.exe --include-package=justai_roulette run_app.py
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: JustAI-Roulette-Windows
-          path: dist/JustAI-Roulette.exe
+          path: JustAI-Roulette.exe
 
       - name: Upload to Release
         if: github.event_name == 'release'
         uses: softprops/action-gh-release@v1
         with:
-          files: dist/JustAI-Roulette.exe
+          files: JustAI-Roulette.exe
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
