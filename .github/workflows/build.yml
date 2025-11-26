@@ -29,7 +29,7 @@ jobs:
       - name: Build EXE
         run: |
           echo "from justai_roulette.__main__ import main; main()" > run_app.py
-          python -m nuitka --onefile --windows-console-mode=disable --output-filename=JustAI-Roulette.exe --include-package=justai_roulette run_app.py
+          python -m nuitka --onefile --windows-console-mode=disable --output-filename=JustAI-Roulette.exe --include-package=justai_roulette --assume-yes-for-downloads run_app.py
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
